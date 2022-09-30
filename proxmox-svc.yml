@@ -1,0 +1,11 @@
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: external-proxmox
+spec:
+  type: ExternalName
+  externalName: 192.168.1.3
+  ports:
+  - port: 8006
+    targetPort: 8006

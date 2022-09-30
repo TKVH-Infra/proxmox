@@ -1,0 +1,4 @@
+namespace: proxmox
+resources:
+- proxmox-svc.yml
+- proxmox-ing.yml
