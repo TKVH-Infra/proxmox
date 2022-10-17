@@ -13,10 +13,9 @@ metadata:
     nginx.ingress.kubernetes.io/proxy-send-timeout: "3600"
     nginx.ingress.kubernetes.io/proxy-body-size: 8000m
     kubernetes.io/ingress.class: "nginx-internal"
-    cert-manager.io/cluster-issuer: vault-admin
 spec:
   rules:
-  - host: proxmox.<path:apps-kv/data/general#adminDN>
+  - host: proxmox.<path:apps-kv/data/general#internalDN>
     http:
       paths:
       - path: /
@@ -28,5 +27,4 @@ spec:
               number: 8006
   tls:
   - hosts:
-    - proxmox.<path:apps-kv/data/general#adminDN>
-    secretName: proxmox-tls
+    - proxmox.<path:apps-kv/data/general#internalDN>
